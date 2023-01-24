@@ -2,13 +2,12 @@
 - hosts: 43.205.235.80
   become: yes
   remote_user: ec2-user
-  become_user: root
   tasks:
   - name: Installing apache middleware
   yum:
   name: httpd
   state: present
-  - name: Statrting apache
+  - name: starting apache
   service:
   name: httpd
   state: started
